@@ -1,14 +1,11 @@
 package com.bridgelabz.algorithm_program;
+import com.bridgelabz.utility.InputScanner;
 import com.bridgelabz.utility.utility;
-import java.util.Scanner;
 public class PrimeNumberRange {
 	public static void main(String[] args)
 	{
-		Scanner s=new Scanner(System.in);
-		int n;
-
 		System.out.println("Enter the max Range");
-		n=s.nextInt();
+		int n=InputScanner.intInput();
 
 		utility.primeNo(n);
 
@@ -17,8 +14,5 @@ public class PrimeNumberRange {
 		{
 			utility.palindromeNum(i);
 		}
-
-
-		s.close();
 	}
 }

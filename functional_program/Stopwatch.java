@@ -1,5 +1,7 @@
 package com.bridgelabz.functional_program;
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
+import com.bridgelabz.utility.utility;
+
 public class Stopwatch {
 	long Start=0;
 	long Stop=0;
@@ -7,49 +9,30 @@ public class Stopwatch {
 	long Now=0;
 	public static void main(String[]args)
 	{
-		Stopwatch sw=new Stopwatch();
 		int ch;
 		int n;
-
-		Scanner s=new Scanner(System.in);
-
+		double start = 0;
+		double stop = 0;
 		do
 		{
 			System.out.println("1.Start\n 2.Stop\n Enter your choice");
-			ch=s.nextInt();
+			ch=InputScanner.intInput();
 
 			switch(ch)
 			{
 			case 1:
-				sw.Start();
+			start=utility.Start();
 				break;
 
 			case 2:
-				sw.Stop();
+			stop=utility.Stop();
 				break;
 			}
 			System.out.println("Do you want to continue? 1 for yes");
-			n=s.nextInt();
+			n=InputScanner.intInput();
 		}while(n==1);
-		sw.Stop();
-		sw.Elapsed_time();
-		s.close();
+		utility.Stop();
+		
+		utility.Elapsed_time(start,stop);
 	}
-
-	public void Start()
-	{
-		Start=System.currentTimeMillis();
-	}
-
-	public void Stop()
-	{
-		Stop=System.currentTimeMillis();
-	}
-
-	public void Elapsed_time()
-	{
-		Et=Stop-Start;
-		System.out.println("Elapsed time="+Et);	
-	}
-
 }

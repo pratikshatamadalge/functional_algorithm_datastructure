@@ -1,13 +1,13 @@
 package com.bridgelabz.algorithm_program;
-import java.util.Scanner;
+
+import com.bridgelabz.utility.InputScanner;
+
 public class BinarySwapNibblePowerOfTwo {
 	public static void main(String[]args)
 	{
-		
-		Scanner s=new Scanner(System.in);
 		int num,position;
 		System.out.println("Enter the number");
-		num=s.nextInt();
+		num=InputScanner.intInput();
 
 		System.out.println("Binary representation");
 		for(position=8;position>=0;position--)
@@ -35,10 +35,6 @@ public class BinarySwapNibblePowerOfTwo {
 			System.out.println("Afrer nibble swapping number is a power of 2");
 		else
 			System.out.println("After nibble swapping number is not a power of 2");
-
-		s.close();
-
 	}
-
 }
 

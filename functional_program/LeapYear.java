@@ -1,14 +1,13 @@
 package com.bridgelabz.functional_program;
-import java.util.Scanner;
+
+import com.bridgelabz.utility.InputScanner;
+
 public class LeapYear {
 	public static void main(String[]args)
 	{
-		Scanner s =new Scanner(System.in);
-
 		int year;
 		System.out.println("Enter the value of year");
-		year=s.nextInt();
-
+		year=InputScanner.intInput();
 
 		if(year%400==0||year%4==0)
 		{
@@ -22,8 +21,6 @@ public class LeapYear {
 		{
 			System.out.println("year is not a leap year");
 		}
-		s.close();
 	}
-
 }
 

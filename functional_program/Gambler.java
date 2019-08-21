@@ -1,5 +1,6 @@
 package com.bridgelabz.functional_program;
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
+
 import java.util.Random;
 public class Gambler {
 	Random rand=new Random();
@@ -9,29 +10,28 @@ public class Gambler {
 	int broke;	   
 	int n;
 
-	void getdata(Scanner s)
+	void getdata()
 	{
 		System.out.println("Enter the initial value");
-		stake=s.nextInt();
+		stake=InputScanner.intInput();
 
 		System.out.println("Enter the goal state gambler wants to acheive");
-		goal=s.nextInt();
+		goal=InputScanner.intInput();
 
 		broke=0;
 
 		System.out.println("Enter the value of n");
-		n=s.nextInt();
+		n=InputScanner.intInput();
 	}
 
 	public static void main(String[]args)
 	{
 		Gambler g=new Gambler();
-		Scanner s=new Scanner(System.in);
 		int wcount=0;
 		int lcount=0;
 		//int n_bet=0;
 
-		g.getdata(s);
+		g.getdata();
 
 		int cash=g.stake;
 

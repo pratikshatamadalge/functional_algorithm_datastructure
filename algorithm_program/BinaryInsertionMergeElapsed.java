@@ -1,29 +1,23 @@
 package com.bridgelabz.algorithm_program;
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
 import com.bridgelabz.utility.utility;
 public class BinaryInsertionMergeElapsed {
-
-
 	public static void main(String[]args)
 	{
-		Scanner s=new Scanner(System.in);
 		int ch,n,l;
 
 		/***************Integer array input**************************/
 		System.out.println("Enter the length of an array");
-		l=s.nextInt();
+		l=InputScanner.intInput();
 		int arr[]=new int[l];
 		int arr1[]=new int[arr.length];		
 		for(int i=0;i<l;i++)
 		{
-			arr[i]=s.nextInt();
+			arr[i]=InputScanner.intInput();
 		}
 
 		System.out.println("Before any operation");
-		for(int i=0;i<l;i++)
-		{
-			System.out.print(arr[i]+" ");
-		}
+		utility.printArray(arr, l);
 		System.out.println();
 		int last=arr.length;
 		int first=0;
@@ -31,14 +25,11 @@ public class BinaryInsertionMergeElapsed {
 		/********************String array input********************************/
 
 		System.out.println("Enter the String");
-		char str[]=s.next().toCharArray();
+		char str[]=InputScanner.stringInput().toCharArray();
 		char str1[]=new char[str.length];
 		long time[]=new long[7];
 		System.out.println("Before any operation");
-		for(int i=0;i<str.length;i++)
-		{
-			System.out.print(str[i]);
-		}
+		utility.printchar(str1,str.length);
 		System.out.println();
 
 		int firststr=0;
@@ -56,14 +47,14 @@ public class BinaryInsertionMergeElapsed {
 		do
 		{
 			System.out.println("Enter the choice");
-			ch=s.nextInt();
+			ch=InputScanner.intInput();
 
 			switch(ch)
 			{
 			case 1:
 				long starttime=System.currentTimeMillis();
 				System.out.println("Enter the key you wnat to search");
-				int key=s.nextInt();
+				int key=InputScanner.intInput();
 				int x=utility.binarySearchInt(arr, first, last, key);
 				if(x!=-1)
 				{
@@ -81,7 +72,7 @@ public class BinaryInsertionMergeElapsed {
 			case 2:
 				starttime=System.currentTimeMillis();
 				System.out.println("Enter the character you wnat to search");
-				char c='r';
+				char c=InputScanner.charInput();
 				int y=utility.binarySearchForString(str, firststr, laststr,c );
 				if(y!=-1)
 				{
@@ -136,17 +127,16 @@ public class BinaryInsertionMergeElapsed {
 			default:
 				System.out.println("Enter correct choice");
 			}
-			
+
 
 			System.out.println("Do you want to continue press 1");
-			n=s.nextInt();
+			n=InputScanner.intInput();
 		}while(n==1);	
 
 		for(int i=1;i<=6;i++)
 		{
 			System.out.println("elapsedtime for the task "+i+" is "+time[i]);
 		}
-		s.close();
 	}
 }
 

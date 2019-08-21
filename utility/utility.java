@@ -41,28 +41,26 @@ public class utility {
 	/* *************************************************
 	 * ******Prime number between 1 to 100**************/
 
-	public static void primeNo(int n)
+	public static int primeNo(int n)
 	{
-		int number,num,i;
+		int num,i;
+		num=n;
 
-		for(number=0;number<n;number++)
+		for(i=2;i<=num;i++)
 		{
-			num=number;
-
-			for(i=2;i<=num;i++)
+			if(num%i==0)
 			{
-				if(num%i==0)
-				{
-					break;
-				}
-			}
-			if(i==num)
-			{
-				System.out.print(num+" ");	
+				break;
 			}
 		}
-		System.out.println();
+		if(i==num)
+			return num;
+		else
+			return -1;
+
 	}
+
+
 	/* **********************************************
 	 * ******************Palindrome*****************/
 
@@ -474,37 +472,40 @@ public class utility {
 	/* ********************************************
 	 * ***********print integer Array*********/
 
-	public static void printArray(int[] arr1, int length) {
+	public static int[] printArray(int[] arr1, int length) {
 		// TODO Auto-generated method stub
 		for(int i=0;i<length;i++)
 		{
 			System.out.print(arr1[i]+" ");
 		}
 		System.out.println();
+		return arr1;
 	}
 
 	/* ********************************************
 	 * ***********print character Array******** */
 
-	public static void printchar(char[] str1, int length) {
+	public static char[] printchar(char[] str1, int length) {
 		// TODO Auto-generated method stub
 		for(int i=0;i<length;i++)
 		{
 			System.out.print(str1[i]);
 		}
 		System.out.println();
+		return str1;
 	}
 
 	/* *********************************************
 	 ***********print string Array********* */
 
-	public static void printString(String[] str1, int length) {
+	public static String[] printString(String[] str1, int length) {
 		// TODO Auto-generated method stub
 		for(int i=0;i<length;i++)
 		{
 			System.out.print(str1[i]);
 		}
 		System.out.println();
+		return str1;
 	}
 
 
@@ -535,14 +536,10 @@ public class utility {
 	 *********************************************** */
 
 
-	public static void CalcFTemp(double temp) 
+	public static double CalcFTemp(double temp) 
 	{ 
+		return (temp * 9/5) + 32;
 
-		double ftemp;
-		ftemp=(temp * 9/5) + 32 ;
-
-
-		System.out.println("Temperature from celsius to Fahrenheit : "+ftemp);
 	}
 
 
@@ -552,14 +549,12 @@ public class utility {
 			Temperature (Fahrenheit to Celsius)	
 	 ************************************************ */
 
-	public static void CalcCTemp(double temp) 
+	public static double CalcCTemp(double temp) 
 	{ 
 
 		double ctemp;
 		ctemp=(temp - 32) * 5/9 ;
-
-
-		System.out.println("Temperature from Fahrenheit to  celsius: "+ctemp);
+		return ctemp;
 	}
 
 
@@ -582,7 +577,7 @@ public class utility {
 	/*		***********************************************
 			Calculate Sqrt using Newton Method
 	 ************************************************** */
-	public static void CalSqrtNewton(double c)
+	public static double CalSqrtNewton(double c)
 	{
 		double epsilon = 1e-15;    // relative error tolerance
 		double t = c;              // estimate of the square root of c
@@ -593,6 +588,7 @@ public class utility {
 		}
 		// print out the estimate of the square root of c
 		System.out.println(t);
+		return t;
 	}
 
 	/* *******************************************
@@ -618,4 +614,164 @@ public class utility {
 		w=35.75+0.6215*t+(0.4275*t-35.75)*Math.pow(v, 0.16);
 		return w;
 	}
+
+	/* ***************************************
+	 * *********printing 2D array integer********************/
+	public static int[][] print_2DArray(int[][] array,int r,int c)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				System.out.print(array[i][j]+" ");
+			}
+			System.out.println("\n");
+		}
+		return array;
+	}
+
+	/* ***************************************
+	 * *********printing 2D array double********************/
+	public static double[][] print_2DArray(double[][] array,int r,int c)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				System.out.print(array[i][j]+" ");
+			}
+			System.out.println("\n");
+		}
+		return array;
+	}
+
+	/* ***************************************
+	 * *********printing 2D array boolean********************/
+	public static boolean[][] print_2DArray(boolean[][] array,int r,int c)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				System.out.print(array[i][j]+" ");
+			}
+			System.out.println("\n");
+		}
+		return array;
+	}
+
+	/* ***************************************
+	 * *********input 2D array integer********************/
+	public static int[][] input_2DArray(int[][] array,int r,int c)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				array[i][j]=InputScanner.intInput();
+			}
+		}
+		return array;
+	}
+	/* ***************************************
+	 * *********input 2D array integer********************/
+	public static double[][] input_2DArray(double[][] array,int r,int c)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				array[i][j]=InputScanner.doubleInput();
+			}
+		}
+		return array;
+	}
+	/* ***************************************
+	 * *********input 2D array integer********************/
+	public static boolean[][] input_2DArray(boolean[][] array,int r,int c)
+	{
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				array[i][j]=InputScanner.booleanInput();
+			}
+		}
+		return array;
+	}
+
+	/* ***************************************
+	 * *********system time start********************/
+
+	public static double Start()
+	{
+		double start=System.currentTimeMillis();
+		return start;
+	}
+	/* ***************************************
+	 * *********system time stop********************/
+	public static double Stop()
+	{
+		double stop=System.currentTimeMillis();
+		return stop;
+	}
+	/* ***************************************
+	 * *********system elapsed_time ********************/
+	public static double Elapsed_time(double start,double stop)
+	{
+		double Et=stop-start;
+		System.out.println("Elapsed time="+Et);	
+		return Et;
+	}
+
+
+	// Recursive function to generate all permutations of a String
+	public static char[] permutations(char[] ch, int currentIndex)
+	{
+		if (currentIndex == ch.length - 1) 
+		{
+			System.out.println(String.valueOf(ch));
+		}
+
+		for (int i = currentIndex; i < ch.length; i++)
+		{
+			swap(ch, currentIndex, i);
+			permutations(ch, currentIndex + 1);
+			swap(ch, currentIndex, i);
+		}
+		return ch;
+	}	
+	// Utility function to swap two characters in a character array
+	public static void swap(char[] ch, int i, int j)
+	{
+		char temp = ch[i];
+		ch[i] = ch[j];
+		ch[j] = temp;
+	}
+
+//
+//	public static void WriteToFile(UserInformation user){
+//		try {
+//			FileOutputStream fos = new FileOutputStream ("keep.dat");
+//			ObjectOutputStream oos = new ObjectOutputStream(fos);
+//			oos.writeObject(user);
+//			fos.close();
+//		} 
+//		catch (Exception e) {
+//			System.out.println(e);   
+//		}
+//	}
+//	public static UserInformation ReadFromFile(){
+//		UserInformation o_userdata = new UserInformation();
+//		try {
+//			FileInputStream fis = new  FileInputStream("keep.dat");
+//			ObjectInputStream ois = new ObjectInputStream(fis);
+//			Object obj = ois.readObject();
+//			o_userdata = (UserInformation) obj;
+//		} 
+//		catch (Exception e) {
+//			System.out.println(e);
+//		} 
+//		return o_userdata;
+//	}
 }

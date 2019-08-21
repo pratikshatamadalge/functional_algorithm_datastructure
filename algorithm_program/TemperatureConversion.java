@@ -1,20 +1,17 @@
 package com.bridgelabz.algorithm_program;
 import com.bridgelabz.utility.*;
-import java.util.Scanner;
 public class TemperatureConversion {
 
 	public static void main(String[]args)
 	{
-		double temp,temp1;
-		Scanner s=new Scanner(System.in);
 		System.out.println("Enter the value of temperature in celcious");
-		temp=s.nextDouble();
-		utility.CalcFTemp(temp);
-		
+		double temp=InputScanner.doubleInput();
+		double temp1=utility.CalcFTemp(temp);
+		System.out.println("Temperature from  celsius to Farenhit: "+temp1);
+	
 		System.out.println("Enter the value of temperature in Farenhit");
-		temp1=s.nextDouble();
-		utility.CalcCTemp(temp1);
-		
-		s.close();
+		double temp2=InputScanner.doubleInput();
+		double temp3=utility.CalcCTemp(temp2);
+		System.out.println("Temperature from  Fahrenheit to  celsius: "+temp3);
 	}
 }

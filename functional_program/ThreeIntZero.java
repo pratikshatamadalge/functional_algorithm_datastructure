@@ -1,19 +1,18 @@
 package com.bridgelabz.functional_program;
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
 public class ThreeIntZero {
 	public static void main(String[]args)
 	{
-		Scanner s=new Scanner(System.in);
 		int n;
 
 		System.out.println("Enter the value of n");
-		n=s.nextInt();
+		n=InputScanner.intInput();
 
 		int a[]=new int [n];
 
 		for(int i=0;i<n;i++)
 		{
-			a[i]=s.nextInt();
+			a[i]=InputScanner.intInput();
 		}
 
 		for(int i=0;i<n;i++)
@@ -38,7 +37,5 @@ public class ThreeIntZero {
 				}
 			}
 		}
-
-		s.close();
 	}
 }

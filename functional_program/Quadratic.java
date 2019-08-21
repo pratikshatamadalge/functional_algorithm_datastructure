@@ -1,6 +1,5 @@
 package com.bridgelabz.functional_program;
-
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
 public class Quadratic {
 	int a,b,c;
 
@@ -18,19 +17,15 @@ public class Quadratic {
 
 	public static void main(String[]args)
 	{
-		Scanner s=new Scanner(System.in);
 		Quadratic q=new Quadratic();
 		//quadratic equation q.a*x*x+2*q.a*q.b+q.b*q.b;
 		System.out.println("Enter the value of a");
-		q.a=s.nextInt();
-
+		q.a=InputScanner.intInput();
 		System.out.println("Enter the value of b");
-		q.b=s.nextInt();
-
+		q.b=InputScanner.intInput();
 		System.out.println("Enter the value of c");
-		q.c=s.nextInt();
+		q.c=InputScanner.intInput();
 
 		q.delta(q.a,q.b,q.c);
-		s.close();
 	}
 }

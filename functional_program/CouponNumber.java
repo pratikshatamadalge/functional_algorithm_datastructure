@@ -1,15 +1,13 @@
 package com.bridgelabz.functional_program;
-import java.util.Scanner;
 import java.util.Random;
+
+import com.bridgelabz.utility.InputScanner;
 public class CouponNumber {
 	public static void main(String[]args)
 	{
-		Scanner s=new Scanner(System.in);
 		Random rand=new Random();
-		int n;
-
 		System.out.println("Enter the number of coupons you want" );
-		n=s.nextInt();
+		int n=InputScanner.intInput();
 
 		int num[]=new int[n];
 
@@ -28,6 +26,5 @@ public class CouponNumber {
 		}
 		for(int i=0;i<n;i++)
 			System.out.println(num[i]);
-		s.close();
 	}
 }

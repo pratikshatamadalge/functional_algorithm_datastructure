@@ -1,33 +1,28 @@
 package com.bridgelabz.algorithm_program;
 import com.bridgelabz.utility.*;
-import java.util.Scanner;
-
 public class DayOfWeek 
 {
-	
-	  
 	public static void main(String arg[]) 
 	{ 
 	    int day=0,month=0,year=0,n=0;
-	    Scanner sc=new Scanner(System.in);
 	    
 	    do
 	    {
 	    System.out.println("Enter the day (dd) : ");
-	    day=sc.nextInt();
+	    day=InputScanner.intInput();
 	    }while(day> 31 || day< 1);
 	    
 	    do
 	    {
 	    System.out.println("Enter the month (mm) : ");
-	    month=sc.nextInt();
+	    month=InputScanner.intInput();
 	    }while(month> 12 || month< 1);
 	    
 	    
 	    do
 	    {
 	    System.out.println("Enter the year (yyyy) : ");
-	    year=sc.nextInt();
+	    year=InputScanner.intInput();
 	    }while(year< 1000 || year> 9999);
 	    
 	   	n= utility.dayofweek(day,month,year);
@@ -55,8 +50,5 @@ public class DayOfWeek
 	   	case 6:System.out.println("Saturday");
 	   	break;
 	   	}
-	   	
-	    
-	    sc.close();
 	} 	
 }

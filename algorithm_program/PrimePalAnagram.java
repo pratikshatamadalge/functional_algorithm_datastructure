@@ -1,7 +1,6 @@
 package com.bridgelabz.algorithm_program;
-//import com.bridgelabz.utility.utility;
 import java.util.ArrayList;
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
 public class PrimePalAnagram {
 
 	public ArrayList<Integer> PrimeNo(int n)      //prime no 
@@ -61,10 +60,8 @@ public class PrimePalAnagram {
 
 
 		int n=0;
-		Scanner sc=new Scanner(System.in);
-
 		System.out.print("Enter n : ");
-		n=sc.nextInt();
+		n=InputScanner.intInput();
 
 		list=p.PrimeNo(n);
 
@@ -98,15 +95,10 @@ public class PrimePalAnagram {
 			}
 		}
 
-
 		System.out.print("\nPrime-Palindrome-anagram numbers are : ");
 		for(int i:list2)
 		{
 			System.out.print(i+" ");
 		}
-
-
-		sc.close();
 	}
-
 }

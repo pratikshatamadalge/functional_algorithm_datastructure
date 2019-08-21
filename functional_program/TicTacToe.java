@@ -1,6 +1,5 @@
 package com.bridgelabz.functional_program;
-
-import java.util.Scanner;
+import com.bridgelabz.utility.InputScanner;
 
 //import org.w3c.dom.ranges.RangeException;
 
@@ -9,17 +8,15 @@ import java.util.Random;
 public class TicTacToe {
 	public static void main(String[]args)
 	{
-		Scanner s=new Scanner(System.in);
 		Random rand=new Random();
 		int r,c,m,n;
 		boolean flag = false;
 		int count1=0,count2=0,chance=0;
 
 		System.out.println("Enter the value of row");
-		r=s.nextInt();
-
+		r=InputScanner.intInput();
 		System.out.println("Enter the value of column");
-		c=s.nextInt();
+		c=InputScanner.intInput();
 
 		int a[][]=new int[r][c];
 
@@ -30,19 +27,19 @@ public class TicTacToe {
 				if(flag==false && chance<=9)
 				{
 					System.out.println("User:Enter the value of row ");
-					m=s.nextInt();
+					m=InputScanner.intInput();
 
 					System.out.println("User:Enter the value coulmn");
-					n=s.nextInt();
+					n=InputScanner.intInput();
 
 					while(a[m][n]!=0)
 					{
 						System.out.println("Previous entered value is already used Enter again");
 						System.out.println("User:Enter the value of row ");
-						m=s.nextInt();
+						m=InputScanner.intInput();
 
 						System.out.println("User:Enter the value coulmn");
-						n=s.nextInt();
+						n=InputScanner.intInput();
 
 					}
 					a[m][n]='*';
@@ -458,6 +455,5 @@ public class TicTacToe {
 				}
 			}
 		}
-		s.close();
 	}
 }

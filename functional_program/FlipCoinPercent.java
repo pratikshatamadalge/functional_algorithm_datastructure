@@ -1,17 +1,14 @@
 package com.bridgelabz.functional_program;
 import java.util.Random;
-import java.util.Scanner;
-
+import com.bridgelabz.utility.InputScanner;
 public class FlipCoinPercent {
 
 	public static void main(String[]args)
 	{
-		Scanner s=new Scanner(System.in);
 		Random rand=new Random();
-		int n;
 		float hcount=0,tcount=0;
 		System.out.println("enter the number of flips of coin");
-		n=s.nextInt();
+		int n=InputScanner.intInput();
 
 		double val[]=new double[n];
 
@@ -38,6 +35,5 @@ public class FlipCoinPercent {
 		float tper=(tcount*100)/n;
 		System.out.println("percentage of hptr="+hper);
 		System.out.println("percentage of tptr="+tper);
-		s.close();
 	}
 }
