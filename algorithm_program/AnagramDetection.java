@@ -1,7 +1,6 @@
 package com.bridgelabz.algorithm_program;
 import com.bridgelabz.utility.InputScanner;
 import com.bridgelabz.utility.utility;
-import java.util.Scanner;
 public class AnagramDetection {
 	public static void main(String[]args)
 	{

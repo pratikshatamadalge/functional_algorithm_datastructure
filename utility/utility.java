@@ -43,18 +43,18 @@ public class utility {
 
 	public static int primeNo(int n)
 	{
-		int num,i;
-		num=n;
+		int number,i;
+		number=n;
 
-		for(i=2;i<=num;i++)
+		for(i=2;i<=number;i++)
 		{
-			if(num%i==0)
+			if(number%i==0)
 			{
 				break;
 			}
 		}
-		if(i==num)
-			return num;
+		if(i==number)
+			return number;
 		else
 			return -1;
 
@@ -662,11 +662,11 @@ public class utility {
 
 	/* ***************************************
 	 * *********input 2D array integer********************/
-	public static int[][] input_2DArray(int[][] array,int r,int c)
+	public static int[][] input_2DArray(int[][] array,int row,int coulumn)
 	{
-		for(int i=0;i<r;i++)
+		for(int i=0;i<row;i++)
 		{
-			for(int j=0;j<c;j++)
+			for(int j=0;j<coulumn;j++)
 			{
 				array[i][j]=InputScanner.intInput();
 			}
@@ -675,11 +675,11 @@ public class utility {
 	}
 	/* ***************************************
 	 * *********input 2D array integer********************/
-	public static double[][] input_2DArray(double[][] array,int r,int c)
+	public static double[][] input_2DArray(double[][] array,int row,int coulumn)
 	{
-		for(int i=0;i<r;i++)
+		for(int i=0;i<row;i++)
 		{
-			for(int j=0;j<c;j++)
+			for(int j=0;j<coulumn;j++)
 			{
 				array[i][j]=InputScanner.doubleInput();
 			}
@@ -748,30 +748,4 @@ public class utility {
 		ch[i] = ch[j];
 		ch[j] = temp;
 	}
-
-//
-//	public static void WriteToFile(UserInformation user){
-//		try {
-//			FileOutputStream fos = new FileOutputStream ("keep.dat");
-//			ObjectOutputStream oos = new ObjectOutputStream(fos);
-//			oos.writeObject(user);
-//			fos.close();
-//		} 
-//		catch (Exception e) {
-//			System.out.println(e);   
-//		}
-//	}
-//	public static UserInformation ReadFromFile(){
-//		UserInformation o_userdata = new UserInformation();
-//		try {
-//			FileInputStream fis = new  FileInputStream("keep.dat");
-//			ObjectInputStream ois = new ObjectInputStream(fis);
-//			Object obj = ois.readObject();
-//			o_userdata = (UserInformation) obj;
-//		} 
-//		catch (Exception e) {
-//			System.out.println(e);
-//		} 
-//		return o_userdata;
-//	}
 }

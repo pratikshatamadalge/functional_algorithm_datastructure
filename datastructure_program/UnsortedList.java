@@ -3,12 +3,13 @@ import com.bridgelabz.utility.DataStructureUtil;
 import com.bridgelabz.utility.DataStructureUtil.Node;
 import com.bridgelabz.utility.InputScanner;
 import java.io.*;
-public class UnsortedList {
+public class UnsortedList
+{
+	
 	public Node head;
 	static UnsortedList ul=new UnsortedList();
 	public static void main(String[]args) throws FileNotFoundException
 	{
-		String str = null;
 		System.out.println("create a file and write somethong and give path");
 
 		File file=new File("/home/admin1/Desktop/java_file_io/text");
@@ -16,52 +17,45 @@ public class UnsortedList {
 		{
 			@SuppressWarnings("resource")
 			BufferedReader br=new BufferedReader(new FileReader(file));
-			String st;
-
+			String st="";
+			String str1 ="";
 			while((st=br.readLine())!=null)
+			{   
+				str1=str1+st;
+
+			}
+			System.out.println(str1);
+
+			String[] arrOfStr = str1.split(" ");
+
+			for (String a : arrOfStr) 
 			{
-				str=st;
-				System.out.println(st);
+				DataStructureUtil.add_node(ul, a);
+				System.out.println(a);
+			}
+
+			DataStructureUtil.printList(ul);
+
+			System.out.println("enter the string you want to search");
+			String str2=InputScanner.stringInput();
+			boolean flag=DataStructureUtil.listSearch(ul,str2);
+
+			if(flag==true)
+			{
+				DataStructureUtil.delete_node(ul, str2);
+				DataStructureUtil.printList(ul);
+			}
+			else
+			{
+				DataStructureUtil.add_node(ul, str2);
+				DataStructureUtil.printList(ul);
+				FileWriter fw=new FileWriter(file,true);
+				PrintWriter pw=new PrintWriter(fw);
+				pw.print(str2+" ");
+				pw.close();
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-
-		char[] str1=str.toCharArray();
-		int cnt=0;
-		for(int i=0;i<str1.length;i++)
-		{
-			if(str1[i]==' ')
-			{
-				cnt++;
-			}
-		}
-
-		System.out.println("cnt="+cnt);
-
-		String[] arrOfStr = str.split(" ", cnt+1);
-
-		for (String a : arrOfStr) 
-		{
-			DataStructureUtil.add_node(ul, a);
-			System.out.println(a);
-		}
-
-		DataStructureUtil.printList(ul);
-
-		System.out.println("enter the string you want to search");
-		String str2=InputScanner.stringInput();
-		boolean flag=DataStructureUtil.listSearch(ul,str2);
-		if(flag==true)
-		{
-			DataStructureUtil.add_node(ul, str2);
-			DataStructureUtil.printList(ul);
-		}
-		else
-		{
-			DataStructureUtil.delete_node(ul, str2);
-			DataStructureUtil.printList(ul);
 		}
 	}
 }
